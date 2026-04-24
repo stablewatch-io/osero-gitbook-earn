@@ -1,0 +1,142 @@
+name: Update Sky Stats
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # every hour on the hour
+  workflow_dispatch:        # allow manual trigger from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch stats and update docs
+        run: |
+          python3 << 'EOF'
+          import urllib.request
+          import json
+          import re
+
+          def fetch(url):
+              req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+              with urllib.request.urlopen(req) as resp:
+                  return json.loads(resp.read())
+
+          def fmt_usd(val):
+              if val >= 1e9:
+                  return f"${val / 1e9:.1f}B"
+              elif val >= 1e6:
+                  return f"${val / 1e6:.1f}M"
+              else:
+                  return f"${val / 1e3:.1f}K"
+
+          # --- Fetch ---
+          summary = fetch('https://osero.stablewatch.io/api/sky/summary')['data']
+          breakdown = fetch('https://osero.stablewatch.io/api/sky/backed-breakdown')
+
+          # --- Summary stats ---
+          susds_supply = fmt_usd(float(summary['total_savings_usds_usd']))
+          usds_supply  = fmt_usd(float(summary['total_usds']) + float(summary['total_dai']))
+          aum          = fmt_usd(float(summary['total_collateral_usd']))
+          asc          = fmt_usd(float(summary['total_asc_usd']))
+          rc           = fmt_usd(float(summary['total_rc_usd']))
+
+          # --- Backed breakdown ---
+          # Map: API category -> (display name, example counterparties)
+          # Order here controls the default sort order when percentages are equal.
+          CATEGORY_MAP = {
+              'stablecoins':                  ('USDC Stablecoins',              'Coinbase Prime'),
+              'short_duration_treasury_bills':('Short Duration Treasury Bills', 'BlackRock, Janus Henderson'),
+              'onchain_crypto_lending':       ('Onchain Crypto-Backed Lending', 'Morpho, SparkLend, Aave/Horizon'),
+              'otc_crypto_lending':           ('OTC Crypto-Backed Lending',     'Maple, Galaxy, Anchorage Digital'),
+              'aaa_corporate_debt':           ('AAA Corporate Debt',            'BNY Mellon, Janus Henderson'),
+              'private_credit':               ('Private Credit',                'Apollo'),
+          }
+
+          total_backed = float(breakdown['meta']['totals']['backed'])
+
+          # Build a dict of category -> backed amount from the response
+          response_backed = {
+              item['category']: float(item['backed'])
+              for item in breakdown['data']
+          }
+
+          # Calculate percentage for every category in the table map (0% if missing from response)
+          rows = []
+          for cat, (name, counterparties) in CATEGORY_MAP.items():
+              backed_val = response_backed.get(cat, 0.0)
+              pct = (backed_val / total_backed * 100) if total_backed > 0 else 0.0
+              rows.append((pct, name, counterparties))
+
+          # Sort by percentage descending
+          rows.sort(key=lambda r: r[0], reverse=True)
+
+          # Build the table (header + separator + rows)
+          col1_w = max(len('Asset class'),   max(len(r[1]) for r in rows))
+          col2_w = max(len('Allocation'),     max(len(f"{r[0]:.1f}%") for r in rows))
+          col3_w = max(len('Example counterparties'), max(len(r[2]) for r in rows))
+
+          def row_str(c1, c2, c3):
+              return f"| {c1:<{col1_w}} | {c2:<{col2_w}} | {c3:<{col3_w}} |"
+
+          table_lines = [
+              row_str('Asset class', 'Allocation', 'Example counterparties'),
+              f"| {'-' * col1_w} | {'-' * col2_w} | {'-' * col3_w} |",
+          ]
+          for pct, name, counterparties in rows:
+              table_lines.append(row_str(name, f"{pct:.1f}%", counterparties))
+
+          backed_table = '\n'.join(table_lines)
+
+          # --- Apply replacements ---
+          filepath = 'overview/sky-savings-rate.md'
+          with open(filepath, 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          def replace_marker(text, tag, value):
+              return re.sub(
+                  rf'<!-- {tag}_START -->.*?<!-- {tag}_END -->',
+                  f'<!-- {tag}_START -->{value}<!-- {tag}_END -->',
+                  text,
+                  flags=re.DOTALL
+              )
+
+          content = replace_marker(content, 'SUSDS_SUPPLY', susds_supply)
+          content = replace_marker(content, 'USDS_SUPPLY',  usds_supply)
+          content = replace_marker(content, 'AUM',          aum)
+          content = replace_marker(content, 'ASC',          asc)
+          content = replace_marker(content, 'RC',           rc)
+
+          content = re.sub(
+              r'<!-- BACKED_TABLE_START -->.*?<!-- BACKED_TABLE_END -->',
+              f'<!-- BACKED_TABLE_START -->\n{backed_table}\n<!-- BACKED_TABLE_END -->',
+              content,
+              flags=re.DOTALL
+          )
+
+          with open(filepath, 'w', encoding='utf-8') as f:
+              f.write(content)
+
+          print(f"sUSDS Supply: {susds_supply} | USDS Supply: {usds_supply} | AUM: {aum} | ASC: {asc} | RC: {rc}")
+          print("Backed table rows:")
+          for pct, name, _ in rows:
+              print(f"  {name}: {pct:.1f}%")
+          EOF
+
+      - name: Commit and push if changed
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+          git add overview/sky-savings-rate.md
+          git diff --staged --quiet && echo "No changes." || (
+            git commit -m "chore: update sky live stats [skip ci]" &&
+            git push
+          )
