@@ -18,10 +18,10 @@ Key protocol statistics:
 
 | Metric                          | Value   |
 | ------------------------------- | ------- |
-| Total sUSDS Supply              | <!-- SUSDS_SUPPLY_START -->$5.4B<!-- SUSDS_SUPPLY_END -->   |
-| Total USDS Supply               | <!-- USDS_SUPPLY_START -->$11.2B<!-- USDS_SUPPLY_END -->  |
-| Sky Protocol AUM                | <!-- AUM_START -->$14.6B<!-- AUM_END --> |
-| Actively Stabilising Collateral | <!-- ASC_START -->$6.7B<!-- ASC_END -->   |
+| Total sUSDS Supply              | <!-- SUSDS_SUPPLY_START -->$5.3B<!-- SUSDS_SUPPLY_END -->   |
+| Total USDS Supply               | <!-- USDS_SUPPLY_START -->$10.9B<!-- USDS_SUPPLY_END -->  |
+| Sky Protocol AUM                | <!-- AUM_START -->$15.3B<!-- AUM_END --> |
+| Actively Stabilising Collateral | <!-- ASC_START -->$4.7B<!-- ASC_END -->   |
 | Sky Protocol Risk Capital       | <!-- RC_START -->$80.6M<!-- RC_END --> |
 
 ***
@@ -34,8 +34,8 @@ The Sky Savings Rate is backed by assets allocated across five categories:
 | Asset class                   | Allocation | Example counterparties           |
 | ----------------------------- | ---------- | -------------------------------- |
 | USDC Stablecoins              | 44.1%      | Coinbase Prime                   |
-| Onchain Crypto-Backed Lending | 17.3%      | Morpho, SparkLend, Aave/Horizon  |
 | Short Duration Treasury Bills | 23.3%      | BlackRock, Janus Henderson       |
+| Onchain Crypto-Backed Lending | 17.3%      | Morpho, SparkLend, Aave/Horizon  |
 | OTC Crypto-Backed Lending     | 9.2%       | Maple, Galaxy, Anchorage Digital |
 | AAA Corporate Debt            | 4.6%       | BNY Mellon, Janus Henderson      |
 | Private Credit                | 0.5%       | Apollo                           |
@@ -47,7 +47,7 @@ This diversified structure means the yield is not reliant on any single source, 
 
 ## USDS and sUSDS
 
-**USDS** is the stablecoin issued by Sky Protocol — the third-largest stablecoin by outstanding supply, with <!-- USDS_SUPPLY_START -->$11.2B<!-- USDS_SUPPLY_END -->+ in circulation.
+**USDS** is the stablecoin issued by Sky Protocol — the third-largest stablecoin by outstanding supply, with <!-- USDS_SUPPLY_START -->$10.9B<!-- USDS_SUPPLY_END -->+ in circulation.
 
 **sUSDS** is the savings-bearing form of USDS. When USDC is deposited through Osero Earn, it is routed through Sky's PSM (Peg Stability Module) to mint USDS, which is then deposited into the ERC-4626 sUSDS vault. The vault continuously accrues the Sky Savings Rate on behalf of the holder.
 
