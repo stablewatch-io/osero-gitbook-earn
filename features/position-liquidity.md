@@ -15,8 +15,6 @@ Actively Stabilising Collateral refers to assets held in the most liquid forms a
 
 Together, these assets give Sky Protocol the capacity to respond quickly to large redemption events or peg pressure without needing to unwind longer-duration or less-liquid positions.
 
-Sky Protocol currently holds **$6.7B** in Actively Stabilising Collateral.
-
 ## Why it matters for distributors
 
 For distributors offering the Sky Savings Rate to retail or institutional users, liquidity is a critical trust signal. Users — particularly those coming from a traditional finance background — want to know that their savings are not locked in illiquid positions that could prevent or delay redemption.
