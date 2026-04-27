@@ -15,9 +15,9 @@ Actively Stabilising Collateral refers to assets held in the most liquid forms a
 
 Together, these assets give Sky Protocol the capacity to respond quickly to large redemption events or peg pressure without needing to unwind longer-duration or less-liquid positions.
 
-## Why it matters for distributors
+## Why it matters for stablecoin platforms
 
-For distributors offering the Sky Savings Rate to retail or institutional users, liquidity is a critical trust signal. Users want to know that their savings are not locked in illiquid positions that could prevent or delay redemption.
+For stablecoin platforms offering the Sky Savings Rate to retail or institutional users, liquidity is a critical trust signal. Users want to know that their savings are not locked in illiquid positions that could prevent or delay redemption.
 
 The size of Sky's Actively Stabilising Collateral relative to total USDS supply provides a meaningful buffer. It means that even in scenarios of elevated redemption pressure, the protocol has substantial capacity to honour withdrawals from immediately accessible reserves before needing to touch longer-duration allocations.
 

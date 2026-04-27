@@ -42,14 +42,14 @@ Wallets that hold or display stablecoin balances can integrate Osero Earn to off
 
 ## Integration requirements
 
-To integrate Osero Earn, a distributor needs:
+To integrate Osero Earn, a stablecoin platform needs:
 
 * A TypeScript-capable development environment
-* User wallets holding USDC on at least one [supported chain](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/supported-chains)
-* The `@osero/client` SDK ([installation guide](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/installation))
+* User wallets holding USDC on at least one [supported chain](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/core-concepts/supported-chains)
+* The `@osero/client` SDK ([installation guide](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/getting-started/installation))
 
-No smart contract deployment, DeFi protocol expertise, or onchain infrastructure management is required on the distributor's side.
+No smart contract deployment, DeFi protocol expertise, or onchain infrastructure management is required on the stablecoin platforms's side.
 
 ## Coming soon: multi-stablecoin support
 
-Through an upcoming integration with [Enso](https://www.enso.finance/), Osero Earn will extend support to accept deposits in any stablecoin or supported blockchain, with Enso handling the routing and conversion to USDC/USDS in a single bundled transaction. This will further widen the addressable user base for any distributor.
+Through an upcoming integration with [Enso](https://www.enso.finance/), Osero Earn will extend support to accept deposits in any stablecoin or supported blockchain, with Enso handling the routing and conversion to USDC/USDS in a single bundled transaction. This will further widen the addressable user base for any stablecoin platform.

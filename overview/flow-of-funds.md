@@ -16,7 +16,7 @@ Osero Earn connects stablecoin platforms to the Sky Savings Rate through a strai
 {% step %}
 ### User deposits USDC
 
-The user's platform — whether a neobank, wallet, or exchange — holds USDC on behalf of the user. The distributor uses the `@osero/client` SDK to initiate the savings flow.
+The user's platform — whether a neobank, wallet, or exchange — holds USDC on behalf of the user. The stablecoin platform uses the `@osero/client` SDK to initiate the savings flow.
 {% endstep %}
 
 {% step %}
@@ -64,4 +64,4 @@ When a user wants to exit, the same SDK handles the reverse flow: sUSDS is redee
 
 ## Coming soon: multi-stablecoin deposits via Enso
 
-Osero Earn is integrating with [Enso](https://www.enso.finance/), a blockchain action bundling provider, directly into the SDK. This will enable distributors to accept deposits in **any stablecoin** — not just USDC — with Enso handling the routing and conversion in a single bundled transaction before the sUSDS mint is executed. Stablecoin platforms building on `@osero/client` today will gain access to this capability when the integration ships.
+Osero Earn is integrating with [Enso](https://www.enso.finance/), a blockchain action bundling provider, directly into the SDK. This will enable stablecoin platforms to accept deposits in **any stablecoin** — not just USDC — with Enso handling the routing and conversion in a single bundled transaction before the sUSDS mint is executed. Stablecoin platforms building on `@osero/client` today will gain access to this capability when the integration ships.

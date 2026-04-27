@@ -49,7 +49,7 @@ An open-source TypeScript SDK that abstracts away all chain-specific routing and
 
 ### 2. Transparency SDK — _Coming Soon_
 
-A live, auditable data feed that gives distributors and their users a real-time view of the assets, liquidity, and risk capital backing the Sky Savings Rate. This enables distributors to surface meaningful transparency data within their own product UI, building user trust without needing to operate any data infrastructure themselves.
+A live, auditable data feed that gives stablecoin platforms and their users a real-time view of the assets, liquidity, and risk capital backing the Sky Savings Rate. This enables stablecoin platforms to surface meaningful transparency data within their own product UI, building user trust without needing to operate any data infrastructure themselves.
 
 [Read about Backing Transparency →](features/backing-transparency.md)
 
@@ -59,11 +59,11 @@ A live, auditable data feed that gives distributors and their users a real-time 
 
 Osero Earn is built for platforms that want to distinguish by offering their users the best risk-adjusted savings product.
 
-| Distributor type | Primary use case                                                             |
-| ---------------- | ---------------------------------------------------------------------------- |
-| **Neobanks**     | Offer yield on stablecoin balances to retail customers as a savings product. |
-| **Custodians**   | Enable institutional clients to earn yield on idle stablecoin holdings.      |
-| **Exchanges**    | Provide a savings rail for users who do not want active trading exposure.    |
-| **Wallets**      | Embed the Sky Savings Rate as a native savings option within the wallet UX.  |
+| Stablecoin platform type | Primary use case                                                             |
+| ------------------------ | ---------------------------------------------------------------------------- |
+| **Neobanks**             | Offer yield on stablecoin balances to retail customers as a savings product. |
+| **Custodians**           | Enable institutional clients to earn yield on idle stablecoin holdings.      |
+| **Exchanges**            | Provide a savings rail for users who do not want active trading exposure.    |
+| **Wallets**              | Embed the Sky Savings Rate as a native savings option within the wallet UX.  |
 
 [See the full use case overview →](overview/use-cases.md)
