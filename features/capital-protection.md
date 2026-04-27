@@ -20,7 +20,7 @@ Allocations backing USDS and sUSDS are made by specialised economic actors withi
 
 Agents are required to hold **Junior Risk Capital** proportional to the inherent risk of each underlying investment they manage. This capital sits "junior" in the loss-absorption stack, meaning it is the first to absorb losses if a position is impaired.
 
-The amount of junior capital required scales with the risk profile of the underlying asset — riskier allocations require proportionally more risk capital from the managing Agent. This creates a strong incentive alignment: Agents bear the first loss, so they are economically motivated to manage risk carefully.
+The amount of junior capital required scales with the risk profile of the underlying asset, riskier allocations require proportionally more risk capital from the managing Agent. This creates a strong incentive alignment: Agents bear the first loss, so they are economically motivated to manage risk carefully.
 
 ***
 
@@ -36,7 +36,7 @@ In the event that a position managed by a Agent suffers an impairment, losses ar
 
 <figure><img src="../.gitbook/assets/OS_Image_The loss-absorption stack.png" alt=""><figcaption></figcaption></figure>
 
-This structure means that a position would need to wipe out both the Agent's capital and Sky Protocol's senior capital before any loss reaches depositors — a meaningfully higher barrier than most DeFi yield products provide.
+This structure means that a position would need to wipe out both the Agent's capital and Sky Protocol's senior capital before any loss reaches depositors — a meaningfully higher barrier than all other DeFi yield products provide.
 
 ***
 

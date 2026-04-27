@@ -16,13 +16,13 @@ The rate is set by Sky Protocol governance and accrues continuously to sUSDS hol
 
 Key protocol statistics:
 
-| Metric                          | Value   |
-| ------------------------------- | ------- |
-| Total sUSDS Supply              | <!-- SUSDS_SUPPLY_START -->$5.4B<!-- SUSDS_SUPPLY_END -->   |
-| Total USDS Supply               | <!-- USDS_SUPPLY_START -->$11.0B<!-- USDS_SUPPLY_END -->  |
-| Sky Protocol AUM                | <!-- AUM_START -->$15.4B<!-- AUM_END --> |
-| Actively Stabilising Collateral | <!-- ASC_START -->$4.9B<!-- ASC_END -->   |
-| Sky Protocol Risk Capital       | <!-- RC_START -->$80.6M<!-- RC_END --> |
+| Metric                           | Value  |
+| -------------------------------- | ------ |
+| Total sUSDS Supply               | $5.4B  |
+| Total USDS Supply                | $11.0B |
+| Sky Protocol AUM                 | $15.4B |
+| Actively Stabilising Collateral  | $4.9B  |
+| Sky Protocol Junior Risk Capital | $80.6M |
 
 ***
 
@@ -30,7 +30,6 @@ Key protocol statistics:
 
 The Sky Savings Rate is backed by assets allocated across five categories:
 
-<!-- BACKED_TABLE_START -->
 | Asset class                   | Allocation | Example counterparties           |
 | ----------------------------- | ---------- | -------------------------------- |
 | USDC Stablecoins              | 47.4%      | Coinbase Prime                   |
@@ -39,7 +38,6 @@ The Sky Savings Rate is backed by assets allocated across five categories:
 | OTC Crypto-Backed Lending     | 7.5%       | Maple, Galaxy, Anchorage Digital |
 | AAA Corporate Debt            | 4.5%       | BNY Mellon, Janus Henderson      |
 | Private Credit                | 0.5%       | Apollo                           |
-<!-- BACKED_TABLE_END -->
 
 This diversified structure means the yield is not reliant on any single source, and risk is distributed across a mix of traditional and onchain instruments.
 
@@ -47,7 +45,7 @@ This diversified structure means the yield is not reliant on any single source, 
 
 ## USDS and sUSDS
 
-**USDS** is the stablecoin issued by Sky Protocol — the third-largest stablecoin by outstanding supply, with <!-- USDS_SUPPLY_START -->$11.0B<!-- USDS_SUPPLY_END -->+ in circulation.
+**USDS** is the stablecoin issued by Sky Protocol — the third-largest stablecoin by outstanding supply.
 
 **sUSDS** is the savings-bearing form of USDS. When USDC is deposited through Osero Earn, it is routed through Sky's PSM (Peg Stability Module) to mint USDS, which is then deposited into the ERC-4626 sUSDS vault. The vault continuously accrues the Sky Savings Rate on behalf of the holder.
 
@@ -59,6 +57,6 @@ Sky Protocol differentiates itself from other DeFi yield sources by applying a r
 
 Within the Sky Ecosystem, allocations are managed by specialised actors called **Agents**. Agents borrow USDS from Sky Protocol to deploy capital across the approved allocation strategies. In exchange, they are required to hold **Junior Risk Capital** proportional to the risk level of each underlying investment. Sky Protocol itself holds **Senior Risk Capital** as an additional backstop.
 
-This two-tier loss-absorption structure means that in the event of a position impairment, losses are absorbed first by the Agent's junior capital before they can reach depositors.
+This two-tier loss-absorption structure means that in the event of a position impairment, losses are absorbed first by the Agent's junior capital and then Sky's senior capital before they can reach depositors.
 
 For more detail on how risk capital works within Osero Earn's transparency layer, see [Risk Capital](../features/capital-protection.md).

@@ -4,7 +4,7 @@ icon: diagram-sankey
 
 # Flow of Funds
 
-Osero Earn connects stablecoin distributors to the Sky Savings Rate through a straightforward flow. Understanding this flow helps clarify what Osero Earn handles on your behalf and what your users experience end-to-end.
+Osero Earn connects stablecoin platforms to the Sky Savings Rate through a straightforward flow. Understanding this flow helps clarify what Osero Earn handles on your behalf and what your users experience end-to-end.
 
 ## The flow
 
@@ -52,16 +52,16 @@ When a user wants to exit, the same SDK handles the reverse flow: sUSDS is redee
 
 | Complexity                                      | Handled by Osero Earn |
 | ----------------------------------------------- | --------------------- |
-| Chain-specific contract routing                 | ✅                     |
-| PSM fee reads (tin / tout)                      | ✅                     |
-| ERC-20 approval management                      | ✅                     |
-| ERC-4626 vault deposit/redeem logic             | ✅                     |
-| Multi-step execution sequencing                 | ✅                     |
-| Preview / quote before execution                | ✅                     |
-| Balance reads across tokens and chains          | ✅                     |
-| Typed error handling                            | ✅                     |
-| Transparency data (live yield, liquidity, risk) | ✅                     |
+| Chain-specific contract routing                 | ✔️                    |
+| PSM fee reads (tin / tout)                      | ✔️                    |
+| ERC-20 approval management                      | ✔️                    |
+| ERC-4626 vault deposit/redeem logic             | ✔️                    |
+| Multi-step execution sequencing                 | ✔️                    |
+| Preview / quote before execution                | ✔️                    |
+| Balance reads across tokens and chains          | ✔️                    |
+| Typed error handling                            | ✔️                    |
+| Transparency data (live yield, liquidity, risk) | _Coming Soon_         |
 
 ## Coming soon: multi-stablecoin deposits via Enso
 
-Osero Earn is integrating with [Enso](https://www.enso.finance/), a blockchain action bundling provider, directly into the SDK. This will enable distributors to accept deposits in **any stablecoin** — not just USDC — with Enso handling the routing and conversion in a single bundled transaction before the Sky Savings Rate mint is executed. Distributors building on `@osero/client` today will gain this capability automatically when the integration ships.
+Osero Earn is integrating with [Enso](https://www.enso.finance/), a blockchain action bundling provider, directly into the SDK. This will enable distributors to accept deposits in **any stablecoin** — not just USDC — with Enso handling the routing and conversion in a single bundled transaction before the sUSDS mint is executed. Stablecoin platforms building on `@osero/client` today will gain access to this capability when the integration ships.

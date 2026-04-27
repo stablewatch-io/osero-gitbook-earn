@@ -29,7 +29,7 @@ Osero Earn enables wallets, neobanks, custodians, and exchanges to offer the **S
 
 ## The problem it solves
 
-Platforms that hold or route stablecoins on behalf of users (wallets, neo-banks, custodians, exchanges) have no easy way to put those balances to work. Offering yield means taking on asset management risk, building infrastructure yourself, or finding a counterparty you can actually trust with your users' funds.
+Platforms that hold or route stablecoins on behalf of users (wallets, neo-banks, custodians, exchanges) have no easy way to put those balances to work. Offering yield means taking on asset management risk, building infrastructure yourself, or finding a centralized counterparty you can actually trust with your users' funds.
 
 Integrating directly with DeFi protocols requires in-house expertise across smart contract development, chain-specific routing, onchain infrastructure management, and ongoing protocol monitoring. For most companies, the cost of building and maintaining this capability far outweighs the benefit.
 
@@ -45,11 +45,11 @@ Osero Earn achieves this through two tightly coupled components:
 
 An open-source TypeScript SDK that abstracts away all chain-specific routing and contract interactions. Given a wallet holding USDC, the SDK builds and executes the correct sequence of transactions to mint USDS or sUSDS on any supported chain handling approvals, PSM routing, and ERC-4626 vault deposits automatically.
 
-[Read the full SDK documentation →](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/)
+[Read the full SDK documentation →](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/getting-started/readme)
 
 ### 2. Transparency SDK — _Coming Soon_
 
-A live, auditable data feed that gives distributors and their users a real-time view of the assets, liquidity, and risk capital backing the Sky Savings Rate. This enables distributors to surface meaningful transparency data within their own product UI, building user trust without needing to build any data infrastructure themselves.
+A live, auditable data feed that gives distributors and their users a real-time view of the assets, liquidity, and risk capital backing the Sky Savings Rate. This enables distributors to surface meaningful transparency data within their own product UI, building user trust without needing to operate any data infrastructure themselves.
 
 [Read about Backing Transparency →](features/backing-transparency.md)
 
