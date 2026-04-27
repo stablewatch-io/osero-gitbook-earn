@@ -30,7 +30,7 @@ Osero Earn's [Transparency API](backing-transparency.md) surfaces this data in r
 | **Idle stablecoins**       | Cash stablecoins held in reserve, immediately redeemable                                                    |
 | **Onchain DeFi positions** | Positions in protocols like Morpho, SparkLend, and Aave Horizon that can be liquidated with no price impact |
 
-Distributors can integrate this feed into their product UI to give users a live view of available liquidity.
+Stablecoin platforms can integrate this feed into their product UI to give users a live view of available liquidity.
 
 ## Relationship to peg stability
 

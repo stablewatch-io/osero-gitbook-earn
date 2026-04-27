@@ -48,4 +48,4 @@ Osero Earn's [Transparency SDK](backing-transparency.md) surfaces this structure
 * Attribution by entity (which Agent holds which capital)
 * Real-time values for each capital position
 
-Distributors can integrate this feed into their product UI to communicate the loss-absorption structure to their users in a clear, auditable way — a transparency standard that is familiar to institutional clients and increasingly valued by sophisticated retail users.
+Stablecoin platforms can integrate this feed into their product UI to communicate the loss-absorption structure to their users in a clear, auditable way — a transparency standard that is familiar to institutional clients and increasingly valued by sophisticated retail users.
