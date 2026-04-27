@@ -36,8 +36,8 @@ jobs:
                   return f"${val / 1e3:.1f}K"
 
           # --- Fetch ---
-          summary = fetch('https://osero.stablewatch.io/api/sky/summary')['data']
-          breakdown = fetch('https://osero.stablewatch.io/api/sky/backed-breakdown')
+          summary = fetch('https://analytics.osero.org/api/sky/summary')['data']
+          breakdown = fetch('https://analytics.osero.org/api/sky/backed-breakdown')
 
           # --- Summary stats ---
           susds_supply = fmt_usd(float(summary['total_savings_usds_usd']))
