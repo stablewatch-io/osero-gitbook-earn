@@ -1,0 +1,46 @@
+name: Check Sky Stats Markers
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'overview/sky-savings-rate.md'
+
+jobs:
+  check-markers:
+    runs-on: ubuntu-latest
+    # Ignore commits made by the stats bot itself
+    if: github.actor != 'github-actions[bot]'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for markers
+        id: check
+        run: |
+          FILE="overview/sky-savings-rate.md"
+          MISSING=""
+          grep -q '<!-- SUSDS_SUPPLY_START -->'  "$FILE" || MISSING="$MISSING SUSDS_SUPPLY"
+          grep -q '<!-- USDS_SUPPLY_START -->'   "$FILE" || MISSING="$MISSING USDS_SUPPLY"
+          grep -q '<!-- AUM_START -->'           "$FILE" || MISSING="$MISSING AUM"
+          grep -q '<!-- ASC_START -->'           "$FILE" || MISSING="$MISSING ASC"
+          grep -q '<!-- RC_START -->'            "$FILE" || MISSING="$MISSING RC"
+          grep -q '<!-- BACKED_TABLE_START -->'  "$FILE" || MISSING="$MISSING BACKED_TABLE"
+          grep -q '<!-- BACKED_TABLE_END -->'    "$FILE" || MISSING="$MISSING BACKED_TABLE_END"
+          if [ -n "$MISSING" ]; then
+            echo "missing=true"    >> $GITHUB_OUTPUT
+            echo "fields=$MISSING" >> $GITHUB_OUTPUT
+          else
+            echo "missing=false"   >> $GITHUB_OUTPUT
+          fi
+
+      - name: Notify Slack
+        if: steps.check.outputs.missing == 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -s -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-type: application/json' \
+            -d "{
+              \"text\": \":warning: <@U08PERYMD54> *sky-savings-rate.md markers stripped* — likely by GitBook editor.\n\nThe following markers are missing: \`${{ steps.check.outputs.fields }}\`\nWithout them the hourly stats update will stop working.\n\n*Commit:* \`${{ github.sha }}\`\n*Author:* ${{ github.actor }}\n*Repo:* ${{ github.repository }}\"
+            }"
