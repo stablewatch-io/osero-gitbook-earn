@@ -38,7 +38,7 @@ The Sky Savings Rate is backed by assets allocated across five categories:
 | Onchain Crypto-Backed Lending | 14.5%      | Morpho, SparkLend, Aave/Horizon  |
 | OTC Crypto-Backed Lending     | 9.2%       | Maple, Galaxy, Anchorage Digital |
 | AAA Corporate Debt            | 4.3%       | BNY Mellon, Janus Henderson      |
-| Private Credit                | 0.4%       | Apollo                           |
+| Private Credit                | 0.5%       | Apollo                           |
 <!-- BACKED_TABLE_END -->
 
 This diversified structure means the yield is not reliant on any single source, and risk is distributed across a mix of traditional and onchain instruments.
