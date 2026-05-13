@@ -18,10 +18,10 @@ Key protocol statistics:
 
 | Metric                           | Value  |
 | -------------------------------- | ------ |
-| Total sUSDS Supply               | <!-- SUSDS_SUPPLY_START -->$5.9B<!-- SUSDS_SUPPLY_END --> |
-| Total USDS Supply                | <!-- USDS_SUPPLY_START -->$11.0B<!-- USDS_SUPPLY_END --> |
-| Sky Protocol AUM                 | <!-- AUM_START -->$15.5B<!-- AUM_END --> |
-| Actively Stabilising Collateral  | <!-- ASC_START -->$5.5B<!-- ASC_END --> |
+| Total sUSDS Supply               | <!-- SUSDS_SUPPLY_START -->$5.6B<!-- SUSDS_SUPPLY_END --> |
+| Total USDS Supply                | <!-- USDS_SUPPLY_START -->$10.7B<!-- USDS_SUPPLY_END --> |
+| Sky Protocol AUM                 | <!-- AUM_START -->$15.2B<!-- AUM_END --> |
+| Actively Stabilising Collateral  | <!-- ASC_START -->$5.2B<!-- ASC_END --> |
 | Sky Protocol Junior Risk Capital | <!-- RC_START -->$81.0M<!-- RC_END --> |
 
 ***
@@ -33,11 +33,11 @@ The Sky Savings Rate is backed by assets allocated across five categories:
 <!-- BACKED_TABLE_START -->
 | Asset class                   | Allocation | Example counterparties           |
 | ----------------------------- | ---------- | -------------------------------- |
-| USDC Stablecoins              | 50.8%      | Coinbase Prime                   |
-| Short Duration Treasury Bills | 18.3%      | BlackRock, Janus Henderson       |
-| Onchain Crypto-Backed Lending | 15.3%      | Morpho, SparkLend, Aave/Horizon  |
+| USDC Stablecoins              | 49.8%      | Coinbase Prime                   |
+| Short Duration Treasury Bills | 18.8%      | BlackRock, Janus Henderson       |
+| Onchain Crypto-Backed Lending | 15.7%      | Morpho, SparkLend, Aave/Horizon  |
 | OTC Crypto-Backed Lending     | 9.9%       | Maple, Galaxy, Anchorage Digital |
-| AAA Corporate Debt            | 4.4%       | BNY Mellon, Janus Henderson      |
+| AAA Corporate Debt            | 4.5%       | BNY Mellon, Janus Henderson      |
 | Private Credit                | 0.3%       | Apollo                           |
 <!-- BACKED_TABLE_END -->
 
