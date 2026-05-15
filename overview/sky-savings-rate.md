@@ -20,7 +20,7 @@ Key protocol statistics:
 | -------------------------------- | ------ |
 | Total sUSDS Supply               | <!-- SUSDS_SUPPLY_START -->$5.9B<!-- SUSDS_SUPPLY_END --> |
 | Total USDS Supply                | <!-- USDS_SUPPLY_START -->$11.0B<!-- USDS_SUPPLY_END --> |
-| Sky Protocol AUM                 | <!-- AUM_START -->$15.7B<!-- AUM_END --> |
+| Sky Protocol AUM                 | <!-- AUM_START -->$15.6B<!-- AUM_END --> |
 | Actively Stabilising Collateral  | <!-- ASC_START -->$5.6B<!-- ASC_END --> |
 | Sky Protocol Junior Risk Capital | <!-- RC_START -->$81.0M<!-- RC_END --> |
 
@@ -33,8 +33,8 @@ The Sky Savings Rate is backed by assets allocated across five categories:
 <!-- BACKED_TABLE_START -->
 | Asset class                   | Allocation | Example counterparties           |
 | ----------------------------- | ---------- | -------------------------------- |
-| USDC Stablecoins              | 51.6%      | Coinbase Prime                   |
-| Short Duration Treasury Bills | 17.8%      | BlackRock, Janus Henderson       |
+| USDC Stablecoins              | 51.7%      | Coinbase Prime                   |
+| Short Duration Treasury Bills | 17.7%      | BlackRock, Janus Henderson       |
 | Onchain Crypto-Backed Lending | 15.4%      | Morpho, SparkLend, Aave/Horizon  |
 | OTC Crypto-Backed Lending     | 9.5%       | Maple, Galaxy, Anchorage Digital |
 | AAA Corporate Debt            | 4.4%       | BNY Mellon, Janus Henderson      |
