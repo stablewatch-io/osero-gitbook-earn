@@ -19,8 +19,8 @@ Key protocol statistics:
 | Metric                           | Value  |
 | -------------------------------- | ------ |
 | Total sUSDS Supply               | <!-- SUSDS_SUPPLY_START -->$6.2B<!-- SUSDS_SUPPLY_END --> |
-| Total USDS Supply                | <!-- USDS_SUPPLY_START -->$11.2B<!-- USDS_SUPPLY_END --> |
-| Sky Protocol AUM                 | <!-- AUM_START -->$15.3B<!-- AUM_END --> |
+| Total USDS Supply                | <!-- USDS_SUPPLY_START -->$11.1B<!-- USDS_SUPPLY_END --> |
+| Sky Protocol AUM                 | <!-- AUM_START -->$15.4B<!-- AUM_END --> |
 | Actively Stabilising Collateral  | <!-- ASC_START -->$5.6B<!-- ASC_END --> |
 | Sky Protocol Junior Risk Capital | <!-- RC_START -->$81.0M<!-- RC_END --> |
 
@@ -33,10 +33,10 @@ The Sky Savings Rate is backed by assets allocated across five categories:
 <!-- BACKED_TABLE_START -->
 | Asset class                   | Allocation | Example counterparties           |
 | ----------------------------- | ---------- | -------------------------------- |
-| USDC Stablecoins              | 51.4%      | Coinbase Prime                   |
-| Short Duration Treasury Bills | 16.8%      | BlackRock, Janus Henderson       |
-| Onchain Crypto-Backed Lending | 16.4%      | Morpho, SparkLend, Aave/Horizon  |
-| OTC Crypto-Backed Lending     | 9.5%       | Maple, Galaxy, Anchorage Digital |
+| USDC Stablecoins              | 51.2%      | Coinbase Prime                   |
+| Short Duration Treasury Bills | 16.9%      | BlackRock, Janus Henderson       |
+| Onchain Crypto-Backed Lending | 16.5%      | Morpho, SparkLend, Aave/Horizon  |
+| OTC Crypto-Backed Lending     | 9.6%       | Maple, Galaxy, Anchorage Digital |
 | AAA Corporate Debt            | 4.4%       | BNY Mellon, Janus Henderson      |
 | Private Credit                | 0.3%       | Apollo                           |
 <!-- BACKED_TABLE_END -->
