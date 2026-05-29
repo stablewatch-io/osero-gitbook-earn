@@ -33,10 +33,10 @@ The Sky Savings Rate is backed by assets allocated across five categories:
 <!-- BACKED_TABLE_START -->
 | Asset class                   | Allocation | Example counterparties           |
 | ----------------------------- | ---------- | -------------------------------- |
-| USDC Stablecoins              | 52.0%      | Coinbase Prime                   |
-| Onchain Crypto-Backed Lending | 18.2%      | Morpho, SparkLend, Aave/Horizon  |
-| Short Duration Treasury Bills | 14.0%      | BlackRock, Janus Henderson       |
-| OTC Crypto-Backed Lending     | 10.0%      | Maple, Galaxy, Anchorage Digital |
+| USDC Stablecoins              | 51.8%      | Coinbase Prime                   |
+| Onchain Crypto-Backed Lending | 18.3%      | Morpho, SparkLend, Aave/Horizon  |
+| Short Duration Treasury Bills | 14.1%      | BlackRock, Janus Henderson       |
+| OTC Crypto-Backed Lending     | 10.1%      | Maple, Galaxy, Anchorage Digital |
 | AAA Corporate Debt            | 4.4%       | BNY Mellon, Janus Henderson      |
 | Private Credit                | 0.3%       | Apollo                           |
 <!-- BACKED_TABLE_END -->
