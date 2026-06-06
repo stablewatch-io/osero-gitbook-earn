@@ -20,7 +20,7 @@ Key protocol statistics:
 | -------------------------------- | ------ |
 | Total sUSDS Supply               | <!-- SUSDS_SUPPLY_START -->$6.3B<!-- SUSDS_SUPPLY_END --> |
 | Total USDS Supply                | <!-- USDS_SUPPLY_START -->$10.8B<!-- USDS_SUPPLY_END --> |
-| Sky Protocol AUM                 | <!-- AUM_START -->$14.5B<!-- AUM_END --> |
+| Sky Protocol AUM                 | <!-- AUM_START -->$14.4B<!-- AUM_END --> |
 | Actively Stabilising Collateral  | <!-- ASC_START -->$5.6B<!-- ASC_END --> |
 | Sky Protocol Junior Risk Capital | <!-- RC_START -->$81.0M<!-- RC_END --> |
 
