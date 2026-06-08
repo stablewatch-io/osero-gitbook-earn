@@ -18,10 +18,10 @@ Key protocol statistics:
 
 | Metric                           | Value  |
 | -------------------------------- | ------ |
-| Total sUSDS Supply               | <!-- SUSDS_SUPPLY_START -->$6.2B<!-- SUSDS_SUPPLY_END --> |
-| Total USDS Supply                | <!-- USDS_SUPPLY_START -->$10.6B<!-- USDS_SUPPLY_END --> |
-| Sky Protocol AUM                 | <!-- AUM_START -->$14.7B<!-- AUM_END --> |
-| Actively Stabilising Collateral  | <!-- ASC_START -->$5.4B<!-- ASC_END --> |
+| Total sUSDS Supply               | <!-- SUSDS_SUPPLY_START -->$5.9B<!-- SUSDS_SUPPLY_END --> |
+| Total USDS Supply                | <!-- USDS_SUPPLY_START -->$10.4B<!-- USDS_SUPPLY_END --> |
+| Sky Protocol AUM                 | <!-- AUM_START -->$14.4B<!-- AUM_END --> |
+| Actively Stabilising Collateral  | <!-- ASC_START -->$5.1B<!-- ASC_END --> |
 | Sky Protocol Junior Risk Capital | <!-- RC_START -->$79.5M<!-- RC_END --> |
 
 ***
@@ -33,11 +33,11 @@ The Sky Savings Rate is backed by assets allocated across five categories:
 <!-- BACKED_TABLE_START -->
 | Asset class                   | Allocation | Example counterparties           |
 | ----------------------------- | ---------- | -------------------------------- |
-| USDC Stablecoins              | 51.5%      | Coinbase Prime                   |
-| Onchain Crypto-Backed Lending | 17.3%      | Morpho, SparkLend, Aave/Horizon  |
-| Short Duration Treasury Bills | 14.7%      | BlackRock, Janus Henderson       |
-| OTC Crypto-Backed Lending     | 10.5%      | Maple, Galaxy, Anchorage Digital |
-| AAA Corporate Debt            | 4.6%       | BNY Mellon, Janus Henderson      |
+| USDC Stablecoins              | 50.2%      | Coinbase Prime                   |
+| Onchain Crypto-Backed Lending | 17.8%      | Morpho, SparkLend, Aave/Horizon  |
+| Short Duration Treasury Bills | 15.1%      | BlackRock, Janus Henderson       |
+| OTC Crypto-Backed Lending     | 10.8%      | Maple, Galaxy, Anchorage Digital |
+| AAA Corporate Debt            | 4.7%       | BNY Mellon, Janus Henderson      |
 | Private Credit                | 0.3%       | Apollo                           |
 <!-- BACKED_TABLE_END -->
 
