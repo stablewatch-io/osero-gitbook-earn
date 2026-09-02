@@ -4,64 +4,61 @@ icon: diagram-sankey
 
 # Flow of Funds
 
-Osero Earn connects stablecoin platforms to the Sky Savings Rate through a straightforward flow. Understanding this flow helps clarify what Osero Earn handles on your behalf and what your users experience end-to-end.
+Osero Earn connects your platform to the Sky Savings Rate through a simple flow.
 
-## The flow
+Here’s how funds move from the stablecoins your users already hold into sUSDS, and what Osero handles along the way.
+
+## The Flow
 
 <figure><img src="../.gitbook/assets/OS_Image_TheFlow.png" alt=""><figcaption></figcaption></figure>
 
-## Step by step
+## Step-by-step
 
 {% stepper %}
 {% step %}
-### User deposits USDC
+### User deposits a stablecoin
 
-The user's platform — whether a neobank, wallet, or exchange — holds USDC on behalf of the user. The stablecoin platform uses the `@osero/client` SDK to initiate the savings flow.
+The user chooses the stablecoin and amount they want to put into savings. The platform uses the `@osero/client` SDK to start the deposit flow.
 {% endstep %}
 
 {% step %}
-### SDK builds the transaction plan
+### Osero prepares the route
 
-The SDK reads the live fee parameters from the relevant PSM contract, determines the optimal routing for the target chain, and assembles an `ExecutionPlan` — a wallet-agnostic description of the transactions required. No DeFi knowledge is needed from the integrating developer.
+The SDK determines the required route and prepares the transactions needed to move the user’s funds into sUSDS.
 
-On **L2 chains** (Base, Arbitrum One, OP Mainnet, Unichain), this is a simple two-step flow: one approval transaction and one PSM3 swap that delivers sUSDS directly.
-
-On **Ethereum Mainnet**, the flow is a two-phase `MultiStepExecution`: USDC is first converted to USDS via Sky's `UsdsPsmWrapper`, then USDS is deposited into the ERC-4626 sUSDS vault.
+The exact flow depends on the stablecoin and network. Osero handles the underlying conversions, routing, and contract interactions, so the platform doesn’t need to build this logic itself.
 {% endstep %}
 
 {% step %}
-### Transactions are broadcast
+### User approves the transactions
 
-The SDK's wallet adapter (`sendWith`) broadcasts each transaction in the correct order, waiting for onchain confirmation between steps where required.
+The required transactions are sent to the user’s wallet for approval and executed in the correct order. Depending on the route, more than one wallet action may be required.
 {% endstep %}
 
 {% step %}
-### User holds sUSDS
+### User receives sUSDS
 
-Once the transactions settle, the user holds sUSDS — a yield-bearing token that accrues the Sky Savings Rate continuously and automatically. No further actions are required to earn yield.
+Once the transactions are complete, the user receives sUSDS, the yield-bearing savings token issued by Sky.
+
+sUSDS earns the Sky Savings Rate automatically, so no additional action is required to start earning.
 {% endstep %}
 
 {% step %}
-### Redemption
+### User withdraws
 
-When a user wants to exit, the same SDK handles the reverse flow: sUSDS is redeemed through the PSM back to USDC, with the user receiving their original principal plus accrued yield.
+When the user wants to withdraw, Osero handles the process in reverse. The user’s sUSDS is converted back into their chosen stablecoin, including the value of the yield earned over time.
 {% endstep %}
 {% endstepper %}
 
-## What Osero Earn handles for you
+## What Osero Handles Behind the Scenes
 
-| Complexity                                      | Handled by Osero Earn |
-| ----------------------------------------------- | --------------------- |
-| Chain-specific contract routing                 | ✔️                    |
-| PSM fee reads (tin / tout)                      | ✔️                    |
-| ERC-20 approval management                      | ✔️                    |
-| ERC-4626 vault deposit/redeem logic             | ✔️                    |
-| Multi-step execution sequencing                 | ✔️                    |
-| Preview / quote before execution                | ✔️                    |
-| Balance reads across tokens and chains          | ✔️                    |
-| Typed error handling                            | ✔️                    |
-| Transparency data (live yield, liquidity, risk) | _Coming Soon_         |
-
-## Coming soon: multi-stablecoin deposits via Enso
-
-Osero Earn is integrating with [Enso](https://www.enso.finance/), a blockchain action bundling provider, directly into the SDK. This will enable stablecoin platforms to accept deposits in **any stablecoin** — not just USDC — with Enso handling the routing and conversion in a single bundled transaction before the sUSDS mint is executed. Stablecoin platforms building on `@osero/client` today will gain access to this capability when the integration ships.
+| Complexity                             | Handled by Osero Earn |
+| -------------------------------------- | --------------------- |
+| Chain-specific contract routing        | ✔️                    |
+| PSM fee reads (tin / tout)             | ✔️                    |
+| ERC-20 approval management             | ✔️                    |
+| ERC-4626 vault deposit/redeem logic    | ✔️                    |
+| Multi-step execution sequencing        | ✔️                    |
+| Preview / quote before execution       | ✔️                    |
+| Balance reads across tokens and chains | ✔️                    |
+| Typed error handling                   | ✔️                    |

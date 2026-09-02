@@ -7,6 +7,7 @@ layout:
   cover:
     visible: true
     size: hero
+    mask: none
   title:
     visible: true
   description:
@@ -21,49 +22,55 @@ layout:
     visible: true
   tags:
     visible: true
+  actions:
+    visible: true
 ---
 
 # What is Osero Earn
 
-Osero Earn enables wallets, neobanks, custodians, and exchanges to offer the **Sky Savings Rate** to their users without taking on asset management risk.
+Osero Earn enables platforms to offer stablecoin savings to their users within a day.
 
-## The problem it solves
+It is an embedded SDK built for wallets, exchanges, fintechs, neobanks, custodians, and other financial platforms that want to add onchain savings without building the underlying DeFi infrastructure themselves.
 
-Platforms that hold or route stablecoins on behalf of users (wallets, neo-banks, custodians, exchanges) have no easy way to put those balances to work. Offering yield means taking on asset management risk, building infrastructure yourself, or finding a centralized counterparty you can actually trust with your users' funds.
+Through Osero Earn, platforms can give their users access to the **Sky Savings Rate** while Osero handles the underlying infrastructure, without requiring platforms to manage the assets themselves.
 
-Integrating directly with DeFi protocols requires in-house expertise across smart contract development, chain-specific routing, onchain infrastructure management, and ongoing protocol monitoring. For most companies, the cost of building and maintaining this capability far outweighs the benefit.
+## The Problem It Solves
 
-Osero Earn eliminates that complexity entirely. It packages the Sky Savings Rate into a developer-friendly SDK, creating a seamless bridge between the traditional development environment and the leading onchain yield product.
+Platforms that hold or support stablecoins, including wallets, neobanks, custodians, and exchanges, have no simple way to offer yield on those balances. Doing so often means building the infrastructure in-house, taking on asset management responsibilities, or relying on a centralized provider.
 
-## Core value proposition
+Integrating directly with DeFi protocols adds another layer of complexity. It requires expertise across smart contracts, multiple networks, routing, onchain infrastructure, and ongoing protocol monitoring. For most platforms, that means significant development and maintenance work for a feature that should be simple for users.
 
-> **Any fintech, wallet, or financial platform can offer institutional-grade stablecoin yield to their users in hours, not months.**
+Osero Earn removes this complexity. It packages access to the Sky Savings Rate in a developer-friendly SDK, allowing platforms to add stablecoin savings without building and operating the underlying DeFi infrastructure themselves.
 
-Osero Earn achieves this through two tightly coupled components:
+## Core Value Proposition
 
-### 1. Integration SDK — `@osero/client`
+> **Osero Earn gives fintechs, wallets, exchanges, and other financial platforms everything they need to offer stablecoin savings to their users, without building the underlying DeFi infrastructure themselves.**
+>
+> **With a single integration, platforms can give users access to the Sky Savings Rate across multiple stablecoins and networks, while Osero handles the conversions, bridging, and onchain complexity required to get funds into and out of sUSDS.**
+>
+> **What would normally require months of development, specialized DeFi expertise, and ongoing infrastructure maintenance can be integrated within a day.**
 
-An open-source TypeScript SDK that abstracts away all chain-specific routing and contract interactions. Given a wallet holding USDC, the SDK builds and executes the correct sequence of transactions to mint USDS or sUSDS on any supported chain handling approvals, PSM routing, and ERC-4626 vault deposits automatically.
+## **A Single SDK for Stablecoin Savings**
+
+`@osero/client` is an open-source TypeScript SDK that handles chain-specific routing and contract interactions required for integrating Osero Earn.
+
+When a user deposits a supported stablecoin, the SDK prepares the required transaction flow into sUSDS, including token approvals, conversions, cross-chain routing, and other onchain interactions.
+
+This gives platforms a single integration for offering stablecoin savings across supported assets and networks, without having to build and maintain the underlying DeFi infrastructure themselves.
 
 [Read the full SDK documentation →](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/getting-started/readme)
 
-### 2. Transparency SDK — _Coming Soon_
+## Who Is Osero Earn For?
 
-A live, auditable data feed that gives stablecoin platforms and their users a real-time view of the assets, liquidity, and risk capital backing the Sky Savings Rate. This enables stablecoin platforms to surface meaningful transparency data within their own product UI, building user trust without needing to operate any data infrastructure themselves.
+Osero Earn is built for platforms that want to offer their users a competitive stablecoin savings product without becoming asset managers or building the underlying DeFi infrastructure themselves.
 
-[Read about Backing Transparency →](features/backing-transparency.md)
+It is designed for wallets, fintechs, neobanks, exchanges, custodians, and other financial platforms looking to add yield as a native part of their product while giving users access to a strong risk-adjusted savings rate.
 
-***
-
-## Who is Osero Earn for?
-
-Osero Earn is built for platforms that want to distinguish by offering their users the best risk-adjusted savings product.
-
-| Stablecoin platform type | Primary use case                                                             |
-| ------------------------ | ---------------------------------------------------------------------------- |
-| **Neobanks**             | Offer yield on stablecoin balances to retail customers as a savings product. |
-| **Custodians**           | Enable institutional clients to earn yield on idle stablecoin holdings.      |
-| **Exchanges**            | Provide a savings rail for users who do not want active trading exposure.    |
-| **Wallets**              | Embed the Sky Savings Rate as a native savings option within the wallet UX.  |
+| Stablecoin platform type | Primary use case                                                                                         |
+| ------------------------ | -------------------------------------------------------------------------------------------------------- |
+| **Neobanks**             | Add stablecoin savings as a native product for their customers.                                          |
+| **Custodians**           | Enable institutional clients to earn yield on idle stablecoin holdings.                                  |
+| **Exchanges**            | Give users a way to earn on stablecoins when they’re not trading, without moving funds off the exchange. |
+| **Wallets**              | Let users earn on the stablecoins they already hold, directly from the wallet.                           |
 
 [See the full use case overview →](overview/use-cases.md)

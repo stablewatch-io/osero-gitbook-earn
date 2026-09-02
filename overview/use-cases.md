@@ -4,17 +4,17 @@ icon: briefcase-blank
 
 # Use Cases
 
-Osero Earn is designed for any platform that holds or distributes stablecoins on behalf of users. The SDK and Transparency API are built to be platform-agnostic — the integration pattern is the same whether you are a consumer neobank or an institutional custodian.
+Osero Earn is designed for any platform that holds or distributes stablecoins for its users. The SDK is platform-agnostic, so the same integration can work across different products, from consumer neobanks and wallets to exchanges and institutional custodians.
 
 ## Who should integrate Osero Earn?
 
 ### Neobanks
 
-|              |                                                                              |
-| ------------ | ---------------------------------------------------------------------------- |
-| **Use case** | Offer yield on stablecoin balances to retail customers as a savings product. |
+|              |                                                                 |
+| ------------ | --------------------------------------------------------------- |
+| **Use case** | Add stablecoin savings as a native product for their customers. |
 
-Neobanks holding customer stablecoin balances have a natural opportunity to offer a savings product that competes with traditional high-yield savings accounts. Osero Earn provides the yield infrastructure and the transparency data needed to present the Sky Savings Rate as a credible, understandable product to retail customers — without requiring the bank to build or maintain any DeFi infrastructure.
+Neobanks holding customer stablecoin balances can turn those balances into a savings product that competes with traditional high-yield savings accounts. Osero Earn provides the infrastructure to offer the Sky Savings Rate directly to retail customers, without requiring the neobank to build or maintain its own DeFi infrastructure.
 
 ### Custodians
 
@@ -22,34 +22,30 @@ Neobanks holding customer stablecoin balances have a natural opportunity to offe
 | ------------ | ----------------------------------------------------------------------- |
 | **Use case** | Enable institutional clients to earn yield on idle stablecoin holdings. |
 
-Institutional clients often hold significant stablecoin balances in custodial accounts with no yield. Osero Earn allows custodians to offer a yield-bearing option on these idle balances. The Basel III-inspired risk framework and live Transparency API data are particularly compelling for institutional clients who require rigorous risk documentation and ongoing auditability.
+Institutional clients often hold significant stablecoin balances in custody without earning yield. Osero Earn allows custodians to offer a yield-bearing option on those balances, backed by a Basel III-inspired capital-protection structure and transparent risk reporting designed to meet institutional clients' expectations.
 
 ### Exchanges
 
-|              |                                                                           |
-| ------------ | ------------------------------------------------------------------------- |
-| **Use case** | Provide a savings rail for users who do not want active trading exposure. |
+|              |                                                                                                          |
+| ------------ | -------------------------------------------------------------------------------------------------------- |
+| **Use case** | Give users a way to earn on stablecoins when they’re not trading, without moving funds off the exchange. |
 
-Exchanges hold large pools of user stablecoin balances across spot, margin, and off-exchange accounts. Osero Earn gives exchanges a way to offer a passive yield product to users who want their stablecoins working for them without active trading. This can reduce churn from users who would otherwise move funds off-platform to earn yield elsewhere.
+Exchanges hold large stablecoin balances for users who aren’t always actively trading. Osero Earn gives those users a way to earn the Sky Savings Rate directly through the exchange, so they don’t need to move their funds elsewhere to find yield. This helps exchanges keep more user assets and activity on the platform.
 
 ### Wallets
 
-|              |                                                                             |
-| ------------ | --------------------------------------------------------------------------- |
-| **Use case** | Embed the Sky Savings Rate as a native savings option within the wallet UX. |
+|              |                                                                                |
+| ------------ | ------------------------------------------------------------------------------ |
+| **Use case** | Let users earn on the stablecoins they already hold, directly from the wallet. |
 
-Wallets that hold or display stablecoin balances can integrate Osero Earn to offer a one-tap savings option directly within their product. The SDK's wallet-agnostic `ExecutionPlan` model makes it straightforward to wire into any existing transaction flow, including account-abstraction setups.
+Wallets can use Osero Earn to add stablecoin savings directly to their existing product. Users can earn the Sky Savings Rate on the stablecoins they already hold, without leaving their wallet or seeking yield elsewhere. The SDK is designed to work with existing transaction flows, including account abstraction setups.
 
 ## Integration requirements
 
-To integrate Osero Earn, a stablecoin platform needs:
+To integrate Osero Earn, a platform needs:
 
 * A TypeScript-capable development environment
-* User wallets holding USDC on at least one [supported chain](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/core-concepts/supported-chains)
+* Support for user wallets holding stablecoins on at least one supported network
 * The `@osero/client` SDK ([installation guide](https://app.gitbook.com/s/FiS75u6KPKebPGXjRNOd/getting-started/installation))
 
-No smart contract deployment, DeFi protocol expertise, or onchain infrastructure management is required on the stablecoin platforms's side.
-
-## Coming soon: multi-stablecoin support
-
-Through an upcoming integration with [Enso](https://www.enso.finance/), Osero Earn will extend support to accept deposits in any stablecoin or supported blockchain, with Enso handling the routing and conversion to USDC/USDS in a single bundled transaction. This will further widen the addressable user base for any stablecoin platform.
+No smart contract deployment, DeFi expertise, or onchain infrastructure management is required from the platform.
